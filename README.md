@@ -5,7 +5,7 @@
 All electrical systems have a time delay when voltage, signal, DC or AC is applied to it. This time delay is called the circuit's time constant (τ) which represents the time response of the circuit when a step voltage or signal is applied.
 
 ### Capacitor Rules
-When a voltage is applied to a discharged capacitor the capcacitor draws charging current and charges up. When the voltage is reduced the capacitor begins to discharge in the opposite direction. The charging and discharging of a capacitor is never instant but takes some amount of time to occur within a certain percent of its max capacity. The time it takes is the time constant τ.
+Initially as voltage is applied to the capacitor it behaves like a short circuit drawing an infinitely large sum of current @ t=0. Over time the capcacitor draws charging current and charges up causing an exponential decrease in the rate of the capacitor charge.  When the voltage is reduced the capacitor begins to discharge in the opposite direction. The charging and discharging of a capacitor is never instant but takes some amount of time to occur within a certain percent of its max capacity. The time it takes is the time constant τ.
 
 ### RC Charging
 If a resistor and capacitor are in series the capacitor will charge through the resistor until the voltage across the capacitor is equal to the supply voltage. The time it takes for the capacitor to fully charge is 5τ. The time it takes for a capacitor to charge 63% of its capacity is equal to τ due to the exponential decay of voltage across the capacitor as it charges.
@@ -54,6 +54,23 @@ From AspenCore Inc.:\
 
 
 
+### Practical Problem
+Generate a 100ns active low WRITE ENABLE pulse for an EEPROM chip using an RC circuit.
 
-Generate a 100ns pulse using an RC circuit.
+First we know we have to create an active low pulse. To simulate this we can use the transient property of discharged capacitors. When a voltage is applied across a discharged capacitor it behaves like a short circuit this will cause our signal to immediately drop to GND. Then using an RC time constant we can retain our source voltage in 5τ.
 
+
+<p align="center">
+    <i>τ = 100ns / 5</i><br>
+    <i>R / C = 100ns / 5</i>
+</p>
+
+Any value of R and C to fit the ratio will work but for simplicity lets make R 5Ω and C 100nF. We have our RC circuit here with our voltage probe to WRITE ENABLE:
+
+![img](img/WE1.png)
+
+In order for this circuit to be reusable we need to discharge the capacitor after each voltage application so it will behave like a short circuit. We do this by an arbitrary size discharge resistor creating a closed circuit between the capacitor and Vcc.
+
+![img](img/WE2.png)
+
+Now we can apply a voltage across the discharged capacitor by closing the switch causing the voltage across the capacitor to drop to 0V instantaneously then charging using the time constant determined by R9 and C8. Based on the values chosen the capacitor will reach steady state @ 100ns since the switch was closed. After the switch is opened, the capacitor will discharge through R10 resetting the circuit.
