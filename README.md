@@ -15,12 +15,12 @@ From AspenCore Inc:\
 
 ### Time Constant
 The time constant is given by:
-<center><i>τ = RC</i></center>
+<p style="text-align: center;"><i>τ = RC</i></p>
 Where R is the resistance in Ohms and C is the capacitance in Farads.
 
 ### Instantaneous Voltage Across Capacitor
 The instantaneous voltage over the capcitor during the charge cycle is given by:
-<center><i>V<sub>c</sub> = V<sub>s</sub>(1-e<sup>(-t/τ)</sup>)</i></center>
+<p style="text-align: center;"><i>V<sub>c</sub> = V<sub>s</sub>(1-e<sup>(-t/τ)</sup>)</i></p>
 Where V<sub>c</sub> is the voltage across the capcitor, V<sub>s</sub> is the supply voltage, t is the instantaneous time since voltage application and τ is the time constant of the circuit.
 
 ### Capacitor Charge Voltage and Current
@@ -39,7 +39,7 @@ Similarily to the charging case the time it takes for the capacitor to fully dis
 
 ### Instantaneous Voltage Across Capacitor
 The instantaneous voltage over the capcitor during the charge cycle is given by:
-<center><i>V<sub>c</sub> = V<sub>s</sub>(e<sup>(-t/τ)</sup>)</i></center>
+<p style="text-align: center;"><i>V<sub>c</sub> = V<sub>s</sub>(e<sup>(-t/τ)</sup>)</i></p>
 Where V<sub>c</sub> is the voltage across the capcitor, V<sub>s</sub> is the supply voltage, t is the instantaneous time since V<sub>c</sub> drain and τ is the time constant of the circuit.
 
 ### Capacitor Discharge Voltage and Current
