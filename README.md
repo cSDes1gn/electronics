@@ -4,4 +4,5 @@ Library of acquired electronics knowledge to reference for practical circuit des
 
 ## Navigation
 1. [Basic RC Circuit Analysis](/RC/README.md)
+2. [Components](/Components/README.md)
 
