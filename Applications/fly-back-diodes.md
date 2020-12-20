@@ -4,13 +4,13 @@ Flyback diodes are a commmon application of diodes for protecting circuit driver
 
 ## Inductor Kickback
 Inductors yield extremely high voltages across them as the current is cutoff from them instantaneously. Inductors dissipate high currents after its current source has dropped to 0. 
-The voltage across the inductor is the product of its inductance and its change in current over time:\
+The voltage across the inductor is the product of its inductance and its change in current over time:
 <p align="center">
-    <img src="https://render.githubusercontent.com/render/math?math=v = L{\dfrac{di}{dt}}">
+    <img src="https://render.githubusercontent.com/render/math?math=\color{red} v = L{\dfrac{di}{dt}}">
 </p>
 
 Take this simple solenoid circuit: (Source in image link)\
-[![img](/Applications/img/inductive-kickback-without-protection.webp)](https://www.allaboutcircuits.com/textbook/semiconductors/chpt-3/inductor-commutating-circuits/)
+[![img](/Applications/img/inductive-kickback-without-protection.webp)](https://www.allaboutcircuits.com/textbook/lsemiconductors/chpt-3/inductor-commutating-circuits/)
 
 When the switch is opened there is an instantaneous drop in current over time which causes a massive negative voltage over the inductor. The inductor releases its current through the switch through an arc (often thousands of volts) as the switch travels to the open state. This is potentially harmful ESD to the driving circuitry. This effect is called inductor kickback.
 

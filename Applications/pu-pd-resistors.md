@@ -8,7 +8,7 @@ When we read an input from a microcontroller pin it is not easy to detect whethe
 
 Imagine we want to measure the digital input off a microcontroller ADC pin using a simple SPST switch. We would start by trying to connect the switch to the microcontroller pin and tie the output to Vcc:
 
-![img](/Applications/img/pu-1.png)
+![img](/Applications/img/pd-1.png)
 
 
 We would expect that when the switch is closed the input reads a digital 1 (which is correct) but also when the switch is open it would read a digital 0. But this is not the case because the gate is not connected to ground instead it is floating. The microcontroller may register a low, but it might just as well register a high. By not being connect to Vcc, or GND, the I/O pin is susceptible to electrical noise that makes the I/O randomly fluctuate between low and high. Such sources include thermal noise and electromagnetic interference (EMI) since the leads of the chip act like tiny antennas when they are floating.
