@@ -28,6 +28,19 @@ The value of the pull-up resistor needs to be chosen to satisfy two conditions:
 
 For condition 1, you don't want the resistor's value too low. The lower the resistance, the more power will be used when the button is hit. You generally want a large resistor value (10kΩ), but you don’t want it too large as to conflict with condition 2 and cause the voltage drop at the pin to be too low. For example a 4MΩ resistor might work as a pull-up, but its resistance is so large that it may not always provide a active high voltage drop.
 
+### Internal MCU Pin Impedance
+
+The MCUs pins commonly have an input impedance of 100K-1MΩ:
+![img](/Applications/img/pu-2.png)
+
+This creates a voltage divider on the MCU input pin where the voltage is read from. It is important that we meet the minimum threshold requirement for the high state while using the least current possible. As a general rule we should select a resistor value that is an order of magnitude less than the input impedance of the pin. So for an input impedance of 100K we should select a 10K pull-up resistor.
+
+Some microcontrollers like the ATMEGA328 have firmware selectors for enabling/disabling internal pull-up/pull-down resistors.
+
+## RC Time Analysis
+
+The system that feeds the input of the MCU is essentially a capacitor coupled with a pull-up/pull-down resistor which creates an RC filter and an RC time constant. The cost to increasing the resistance is that the RC time constant will rise making the switching time at the MCU input slower. This is why you will often see strong pull-up (1k to 4.7KΩ) resistors on USB or other high speed signal lines.
+
 
 ## Sources
 1. [Sparkfun](https://learn.sparkfun.com/tutorials/pull-up-resistors/all)
