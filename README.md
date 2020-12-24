@@ -6,4 +6,5 @@ Library of acquired electronics knowledge to reference for practical circuit des
 1. [Basic RC Circuit Analysis](/RC/README.md)
 2. [Multivibrators](/Multivibrators/README.md)
 3. [Components](/Components/README.md)
+4. [Applications](/Applications/fly-back-diodes.md)
 

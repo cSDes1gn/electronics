@@ -39,7 +39,7 @@ Some microcontrollers like the ATMEGA328 have firmware selectors for enabling/di
 
 ## RC Time Analysis
 
-The system that feeds the input of the MCU is essentially a capacitor coupled with a pull-up/pull-down resistor which creates an RC filter and an RC time constant. The cost to increasing the resistance is that the RC time constant will rise making the switching time at the MCU input slower. This is why you will often see strong pull-up (1k to 4.7KΩ) resistors on USB or other high speed signal lines.
+The system that feeds the input of the MCU is essentially a capacitor coupled with a pull-up/pull-down resistor which creates an RC filter and an RC time constant. The cost to increasing the resistance is that the RC time constant will rise making the switching time at the MCU input slower. This is why you will often see strong pull-up (1k to 4.7KΩ) resistors on USB, I2C or other high speed signal lines.
 
 
 ## Sources
